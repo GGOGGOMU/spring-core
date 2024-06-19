@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BeanFactory {
     private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256);
 
+
     public void registerSingleton(String beanName, Object singletonObject) throws IllegalStateException {
         synchronized(this.singletonObjects) {
             Object oldObject = this.singletonObjects.get(beanName);
@@ -28,6 +29,10 @@ public class BeanFactory {
         synchronized(this.singletonObjects) {
             this.singletonObjects.put(beanName, singletonObject);
         }
+    }
+
+    public int getBeanDefinitionCount() {
+        return this.singletonObjects.size();
     }
 
 }
