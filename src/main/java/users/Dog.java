@@ -1,8 +1,13 @@
-package user;
+package users;
 
 public class Dog {
     private String name;
     private int age;
+
+    public Dog() {
+        this.name = "Dog";
+        this.age = 1;
+    }
 
     public Dog(String name, int age) {
         this.name = name;
