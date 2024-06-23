@@ -6,8 +6,10 @@ public class Main {
         System.out.println("Hello world!");
         BeanFactory factory = new BeanFactory();
         LocationScanner scanner = new LocationScanner(factory);
-        String packagePath = "test.user";
-        scanner.scan(packagePath);
+        String modelPackagePath = "yunha.model";
+        scanner.classScanner(modelPackagePath);
+        String configPackagePath = "yunha.config";
+        scanner.methodScanner(configPackagePath);
         System.out.println("done");
     }
 }

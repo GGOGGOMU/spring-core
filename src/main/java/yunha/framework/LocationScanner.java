@@ -76,7 +76,34 @@ public class LocationScanner {
         return classes;
     }
 
-    private static List<Class<?>> findClasses(File directory, String packageName) {
+    public void methodScanner(String... basePackages) {
+        if(basePackages == null || basePackages.length == 0)
+            return;
+
+        for(String basePackageName : basePackages) {
+            Reflections reflections = new Reflections(basePackageName, new SubTypesScanner(false));
+            Set<Class<?>> classes = reflections.getSubTypesOf(Object.class);
+
+            if(classes == null)
+                continue;
+
+            classes.forEach(clazz -> {
+                Method[] methods = clazz.getDeclaredMethods();
+                if(methods != null && methods.length > 0) {
+                    for(Method method : methods) {
+                        if (Modifier.isPublic(method.getModifiers())) {
+                            beanFactory.registerSingleton(method.getName(), new TestBean(method.getName()));
+                            System.out.println("Public method: " + method.getName());
+                        }
+                    }
+                }
+            });
+        }
+
+
+    }
+
+    /*private static List<Class<?>> findClasses(File directory, String packageName) {
         List<Class<?>> classes = new ArrayList<Class<?>>();
         if (!directory.exists()) {
             return classes;
