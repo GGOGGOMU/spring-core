@@ -1,4 +1,4 @@
-package test.bean;
+package yunha.bean;
 
 public class TestBean {
 

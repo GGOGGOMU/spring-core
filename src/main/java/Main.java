@@ -1,5 +1,5 @@
-import test.framework.BeanFactory;
-import test.framework.LocationScanner;
+import yunha.framework.BeanFactory;
+import yunha.framework.LocationScanner;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,12 +1,12 @@
-package test.framework;
+package yunha.framework;
 
 
 import org.reflections.scanners.SubTypesScanner;
-import test.bean.TestBean;
+import yunha.bean.TestBean;
 import org.reflections.Reflections;
-import org.reflections.scanners.Scanners;
 
-import java.io.File;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.*;
 
 /**
@@ -33,7 +33,7 @@ public class LocationScanner {
         this.beanFactory = beanFactory;
     }
 
-    public Set<Class> scan(String... basePackages) {
+    public Set<Class> classScanner(String... basePackages) {
         if(basePackages == null || basePackages.length == 0)
             return new HashSet<Class>();
 
@@ -82,7 +82,7 @@ public class LocationScanner {
             return classes;
         }
         return classes;
-    }
+    }*/
 
 
 }

@@ -1,10 +1,10 @@
-package test.user;
+package yunha.model;
 
-public class Cat {
+public class Dog {
     private String name;
     private int age;
 
-    public Cat(String name, int age) {
+    public Dog(String name, int age) {
         this.name = name;
         this.age = age;
     }

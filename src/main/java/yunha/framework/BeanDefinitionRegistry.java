@@ -1,4 +1,4 @@
-package test.framework;
+package yunha.framework;
 
 public interface BeanDefinitionRegistry {
 
