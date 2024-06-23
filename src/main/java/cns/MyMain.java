@@ -1,5 +1,7 @@
-import framework.ClassLoader;
-import framework.LocationScanner;
+package cns;
+
+import cns.framework.ClassLoader;
+import cns.framework.LocationScanner;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;

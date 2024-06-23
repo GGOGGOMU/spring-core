@@ -1,4 +1,4 @@
-package framework;
+package cns.framework;
 
 import java.lang.reflect.InvocationTargetException;
 

@@ -1,4 +1,4 @@
-package framework;
+package cns.framework;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

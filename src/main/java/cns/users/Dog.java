@@ -1,15 +1,15 @@
-package users;
+package cns.users;
 
-public class Cat {
+public class Dog {
     private String name;
     private int age;
 
-    public Cat() {
-        this.name = "Cat";
+    public Dog() {
+        this.name = "Dog";
         this.age = 1;
     }
 
-    public Cat(String name, int age) {
+    public Dog(String name, int age) {
         this.name = name;
         this.age = age;
     }

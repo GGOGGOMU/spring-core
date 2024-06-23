@@ -1,4 +1,4 @@
-package framework;
+package cns.framework;
 
 
 import java.io.File;
@@ -15,7 +15,7 @@ import java.util.List;
  * */
 public class LocationScanner {
 
-    private final String BASE_DIR = "src/main/java/users";
+    private final String BASE_DIR = "src/main/java/cns.users";
 
     public List<String> read() throws IOException {
         List<String> classNames = new ArrayList<>();
