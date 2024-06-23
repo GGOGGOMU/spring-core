@@ -1,12 +1,22 @@
 package cns.framework;
 
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 
 public class BeanFactory implements BeanDefinitionRegistry {
     private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256);
+
+    public void getRegisteredBean() {
+        System.out.println("----------------Registered Bean names ------------");
+        Collection<Object> values = singletonObjects.values();
+
+        for(Object value : values) {
+            System.out.println(value.getClass());
+        }
+    }
 
     @Override
     public void registerSingleton(String beanName, Object singletonObject) throws IllegalStateException {
