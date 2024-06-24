@@ -21,14 +21,13 @@ public class LocationScanner {
 
     public int scan(String... basePackages) throws ClassNotFoundException, IOException {
 
-        Arrays.stream(basePackages).map(basePackage -> {
-            try {
-                doScan(basePackage);
-            } catch (ClassNotFoundException | IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        });
+        System.out.println("scan start");
+
+        for(String basePackage : basePackages) {
+
+            doScan(basePackage);
+            System.out.println("basePackage : " + basePackage);
+        }
 
         return beanFactory.getBeanDefinitionCount();
 

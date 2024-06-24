@@ -1,5 +1,6 @@
 package framework;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -34,5 +35,18 @@ public class BeanFactory {
     public int getBeanDefinitionCount() {
         return this.singletonObjects.size();
     }
+
+    public List<Map<String, Object>> getBeans() {
+        return this.singletonObjects.entrySet().stream().map(entry -> {
+            Map<String, Object> map = new ConcurrentHashMap<>();
+            map.put("beanName", entry.getKey());
+            map.put("beanObject", entry.getValue());
+            return map;
+        }).toList();
+    }
+
+
+
+
 
 }
