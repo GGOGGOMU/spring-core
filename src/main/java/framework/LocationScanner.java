@@ -3,8 +3,11 @@ package framework;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.util.*;
+import java.lang.reflect.Method;
+
 
 /**
  * description
@@ -55,9 +58,10 @@ public class LocationScanner {
             return classes;
         }
         File[] files = directory.listFiles();
+        if (files == null) throw new AssertionError();
         for (File file : files) {
             if (file.isDirectory()) {
-                assert !file.getName().contains(".");
+                if (file.getName().contains(".")) throw new AssertionError();
                 classes.addAll(findClasses(file, packageName + "." + file.getName()));
             } else if (file.getName().endsWith(".class")) {
                 classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
@@ -66,5 +70,17 @@ public class LocationScanner {
         return classes;
     }
 
+    public static List<Method> findPublicMethods(Class<?> clazz) {
+        Method[] methods = clazz.getMethods();
+
+        List<Method> publicMethods = new ArrayList<>();
+
+        for (Method method : methods) {
+            if (Modifier.isPublic(method.getModifiers()) && !method.getDeclaringClass().equals(Object.class)){
+                publicMethods.add(method);
+            }
+        }
+        return publicMethods;
+    }
 
 }
