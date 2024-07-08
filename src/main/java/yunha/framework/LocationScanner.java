@@ -5,6 +5,7 @@ import org.reflections.scanners.SubTypesScanner;
 import yunha.bean.TestBean;
 import org.reflections.Reflections;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
@@ -14,26 +15,13 @@ import java.util.*;
  * test.user 하위 디렉터리에 있는 클래스를 읽어 들이는 클래스
  * */
 public class LocationScanner {
-
-//    public int scan(String... basePackages) {
-//        int beanCountAtScanStart = this.registry.getBeanDefinitionCount();
-//
-//        doScan(basePackages);
-//
-//        // Register annotation config processors, if necessary.
-//        if (this.includeAnnotationConfig) {
-//            AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
-//        }
-//
-//        return (this.registry.getBeanDefinitionCount() - beanCountAtScanStart);
-//    }
     private final BeanFactory beanFactory;
 
     public LocationScanner(BeanFactory beanFactory) {
         this.beanFactory = beanFactory;
     }
 
-    public Set<Class> classScanner(String... basePackages) {
+    public Object classScanner(String... basePackages) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         if(basePackages == null || basePackages.length == 0)
             return new HashSet<Class>();
 
@@ -44,39 +32,18 @@ public class LocationScanner {
             classes.addAll(reflections.getSubTypesOf(Object.class));
         }
 
-        classes.forEach(clazz -> {
-            beanFactory.registerSingleton(clazz.getSimpleName(), new TestBean(clazz.getSimpleName()));
+        if(classes == null)
+            return null;
+
+        for(Class clazz : classes) {
+            beanFactory.registerSingleton(clazz.getSimpleName(), clazz.getDeclaredConstructor().newInstance());
             System.out.println(clazz.getSimpleName());
-        });
-
-        /*for(String basePackageName : basePackages) {
-            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-            String path = basePackageName.replace('.', '/');
-
-
-            try {
-                List<File> files = new ArrayList<File>();
-                Enumeration<URL> resources = classLoader.getResources(path);
-                while (resources.hasMoreElements()) {
-                    URL resource = resources.nextElement();
-                    files.add(new File(resource.getFile()));
-                }
-                for (File file : files) {
-                    if (file.isDirectory()) {
-                        //System.out.println("[Directory] " + file.getAbsolutePath());
-                        classes.addAll(findClasses(file, basePackageName));
-                        beanFactory.registerSingleton(file.getName(), new TestBean(file.getName()));
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }*/
+        }
 
         return classes;
     }
 
-    public void methodScanner(String... basePackages) {
+    public void methodScanner(String... basePackages) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         if(basePackages == null || basePackages.length == 0)
             return;
 
@@ -87,29 +54,20 @@ public class LocationScanner {
             if(classes == null)
                 continue;
 
-            classes.forEach(clazz -> {
+            for(Class clazz : classes) {
                 Method[] methods = clazz.getDeclaredMethods();
+                Object instance = clazz.getDeclaredConstructor().newInstance();
                 if(methods != null && methods.length > 0) {
                     for(Method method : methods) {
                         if (Modifier.isPublic(method.getModifiers())) {
-                            beanFactory.registerSingleton(method.getName(), new TestBean(method.getName()));
+                            beanFactory.registerSingleton(method.getName(), method.invoke(instance));
                             System.out.println("Public method: " + method.getName());
                         }
                     }
                 }
-            });
+            }
         }
-
 
     }
-
-    /*private static List<Class<?>> findClasses(File directory, String packageName) {
-        List<Class<?>> classes = new ArrayList<Class<?>>();
-        if (!directory.exists()) {
-            return classes;
-        }
-        return classes;
-    }*/
-
 
 }

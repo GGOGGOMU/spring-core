@@ -5,8 +5,6 @@ public class Cat {
     private int age;
 
     public Cat() {
-        this.name = "Cat";
-        this.age = 1;
     }
 
     public Cat(String name, int age) {

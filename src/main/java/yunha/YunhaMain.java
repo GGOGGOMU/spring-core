@@ -3,8 +3,10 @@ package yunha;
 import yunha.framework.BeanFactory;
 import yunha.framework.LocationScanner;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class YunhaMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         System.out.println("Hello world!");
         BeanFactory factory = new BeanFactory();
         LocationScanner scanner = new LocationScanner(factory);

@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2025dea-9502-450e-9296-f399386a3f54" name="변경" comment="refactor: bean scan, register 로직 수정">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/bean/TestBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/config/RaisingCat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/config/RaisingDog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/BeanDefinitionRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/model/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/model/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/framework/BeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/framework/BeanDefinitionRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/framework/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/framework/BeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/user/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/user/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/user/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/user/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/config/PetConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/model/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/model/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/model/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/model/Dog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,8 +88,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="cns" />
-                    <option name="lastUsedInstant" value="1718542034" />
+                    <option name="branchName" value="merge_yun" />
+                    <option name="lastUsedInstant" value="1720488558" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
@@ -140,7 +130,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.YunhaMain.executor": "Debug",
+    "Application.YunhaMain.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.spring-core [:CnsMain.main()].executor": "Run",
     "Gradle.spring-core [:Main.main()].executor": "Run",
@@ -154,7 +144,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging master",
+    "git-widget-placeholder": "merge__yun",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -375,15 +365,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="refactor: bean scan, register 로직 수정" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cns/CnsMain.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
