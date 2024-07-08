@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/cns/users/Cat.java
-package cns.users;
-========
 package yunha.model;
->>>>>>>> yunha:src/main/java/yunha/model/Cat.java
 
 public class Cat {
     private String name;

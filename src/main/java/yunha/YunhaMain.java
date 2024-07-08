@@ -1,7 +1,9 @@
+package yunha;
+
 import yunha.framework.BeanFactory;
 import yunha.framework.LocationScanner;
 
-public class Main {
+public class YunhaMain {
     public static void main(String[] args) {
         System.out.println("Hello world!");
         BeanFactory factory = new BeanFactory();

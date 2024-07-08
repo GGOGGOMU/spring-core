@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/cns/framework/BeanFactory.java
 package cns.framework;
-========
-package yunha.framework;
->>>>>>>> yunha:src/main/java/yunha/framework/BeanFactory.java
 
 
 import java.util.Collection;

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/cns/users/Dog.java
-package cns.users;
-========
 package yunha.model;
->>>>>>>> yunha:src/main/java/yunha/model/Dog.java
 
 public class Dog {
     private String name;
