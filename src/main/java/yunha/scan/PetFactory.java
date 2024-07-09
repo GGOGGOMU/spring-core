@@ -1,9 +1,9 @@
-package yunha.config;
+package yunha.scan;
 
 import yunha.model.Cat;
 import yunha.model.Dog;
 
-public class PetConfig {
+public class PetFactory {
 
     public Cat myCat() {
         return new Cat("Kitty", 1);

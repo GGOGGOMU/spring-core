@@ -2,7 +2,7 @@ package yunha.framework;
 
 
 import org.reflections.scanners.SubTypesScanner;
-import yunha.bean.TestBean;
+import yunha.annotation.Bean;
 import org.reflections.Reflections;
 
 import java.lang.reflect.InvocationTargetException;
@@ -70,4 +70,26 @@ public class LocationScanner {
 
     }
 
+    public void annotationScanner(String rootPackagePath) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        Reflections reflections = new Reflections(rootPackagePath, new SubTypesScanner(false));
+        Set<Class<?>> classes = reflections.getSubTypesOf(Object.class);
+
+        if(classes == null)
+            return;
+
+        for(Class clazz : classes) {
+            Method[] methods = clazz.getDeclaredMethods();
+            if(methods != null && methods.length > 0) {
+                for(Method method : methods) {
+                    if(method.isAnnotationPresent(Bean.class.asSubclass(Bean.class))) {
+                        Bean beanAnnotation = method.getAnnotation(Bean.class);
+                        String name = beanAnnotation.value().equals("") ? method.getName() : beanAnnotation.value();
+                        Object instance = clazz.getDeclaredConstructor().newInstance();
+                        beanFactory.registerSingleton(name, method.invoke(instance));
+                        System.out.println("annotation bean: " + name);
+                    }
+                }
+            }
+        }
+    }
 }

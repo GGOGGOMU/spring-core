@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2025dea-9502-450e-9296-f399386a3f54" name="변경" comment="refactor: bean scan, register 로직 수정">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/config/PetConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/annotation/Bean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/config/TestBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/config/PetConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/scan/PetFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/model/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/model/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/model/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/model/Dog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -110,6 +112,9 @@
     &quot;accountId&quot;: &quot;d201b740-dfcd-46ff-8fa2-fa248dc0a2db&quot;
   }
 }</component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -130,7 +135,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.YunhaMain.executor": "Run",
+    "Application.YunhaMain.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.spring-core [:CnsMain.main()].executor": "Run",
     "Gradle.spring-core [:Main.main()].executor": "Run",

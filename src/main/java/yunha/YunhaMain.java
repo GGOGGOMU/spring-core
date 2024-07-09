@@ -10,10 +10,19 @@ public class YunhaMain {
         System.out.println("Hello world!");
         BeanFactory factory = new BeanFactory();
         LocationScanner scanner = new LocationScanner(factory);
+
+        // Class Bean
         String modelPackagePath = "yunha.model";
         scanner.classScanner(modelPackagePath);
-        String configPackagePath = "yunha.config";
+
+        // Method Bean
+        String configPackagePath = "yunha.scan";
         scanner.methodScanner(configPackagePath);
+
+        // Annotation Bean
+        String rootPackagePath = "yunha";
+        scanner.annotationScanner(rootPackagePath);
+
         System.out.println("done");
     }
 }
