@@ -3,10 +3,10 @@ package keb.framework;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Modifier;
 import java.net.URL;
-import java.util.*;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
 
 
 /**
@@ -19,21 +19,6 @@ public class LocationScanner {
 
     public LocationScanner(BeanFactory beanFactory) {
         this.beanFactory = beanFactory;
-    }
-
-
-    public int scan(String... basePackages) throws ClassNotFoundException, IOException {
-
-        System.out.println("scan start");
-
-        for(String basePackage : basePackages) {
-
-            doScan(basePackage);
-            System.out.println("basePackage : " + basePackage);
-        }
-
-        return beanFactory.getBeanDefinitionCount();
-
     }
 
     public static List<Class<?>> doScan(String packageName) throws ClassNotFoundException, IOException {
@@ -70,17 +55,17 @@ public class LocationScanner {
         return classes;
     }
 
-    public static List<Method> findPublicMethods(Class<?> clazz) {
-        Method[] methods = clazz.getMethods();
-
-        List<Method> publicMethods = new ArrayList<>();
-
-        for (Method method : methods) {
-            if (Modifier.isPublic(method.getModifiers()) && !method.getDeclaringClass().equals(Object.class)){
-                publicMethods.add(method);
+    public List<Class<?>> getAnnotatedClasses(String packageName, Class... annotations) throws ClassNotFoundException, IOException {
+        List<Class<?>> allClasses = doScan(packageName);
+        List<Class<?>> annotatedClasses = new ArrayList<>();
+        for (Class<?> clazz : allClasses) {
+            for (Class annotation : annotations) {
+                if (clazz.isAnnotationPresent(annotation)) {
+                    annotatedClasses.add(clazz);
+                    break;
+                }
             }
         }
-        return publicMethods;
+        return annotatedClasses;
     }
-
 }

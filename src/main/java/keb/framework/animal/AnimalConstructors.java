@@ -1,7 +1,10 @@
-package keb.framework.user;
+package keb.framework.animal;
 
 
-public class UserConstructors {
+import keb.framework.annotations.Component;
+
+@Component
+public class AnimalConstructors {
 
     public Cat voidCat(){
         return new Cat();

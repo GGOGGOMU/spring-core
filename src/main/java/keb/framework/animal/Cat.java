@@ -1,20 +1,19 @@
-package keb.framework.user;
+package keb.framework.animal;
 
-
-public class Dog {
+public class Cat {
     private String name;
     private int age;
 
-    public Dog() {
+    public Cat() {
     }
 
-    public Dog(String name, int age) {
+    public Cat(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Dog(String barkDog) {
-        System.out.println(bark(barkDog));
+    public Cat(String meowCat) {
+        System.out.println(meow(meowCat));
     }
 
     public String getName() {
@@ -33,7 +32,7 @@ public class Dog {
         this.age = age;
     }
 
-    public String bark(String bark) {
-        return bark;
+    public String meow(String meow) {
+        return meow;
     }
 }
