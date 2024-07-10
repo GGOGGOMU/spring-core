@@ -11,8 +11,8 @@ import static keb.framework.BeanUtils.convertBeanName;
 
 public class AnnotationProcessor {
 
-    private BeanFactory beanFactory;
-    private LocationScanner locationScanner;
+    private final BeanFactory beanFactory;
+    private final LocationScanner locationScanner;
 
 
     public AnnotationProcessor(BeanFactory beanFactory) {
@@ -28,22 +28,22 @@ public class AnnotationProcessor {
             annotatedComponent(clazz);
         }
 
-        for (Class<?> configClass : configurationClasses) {
-            annotatedConfiguration(configClass);
+        for (Class<?> clazz : configurationClasses) {
+            annotatedConfiguration(clazz);
         }
     }
 
     private void annotatedComponent(Class<?> clazz) throws Exception {
         if (clazz.isAnnotationPresent(keb.framework.annotations.Component.class)) {
             Object instance = clazz.getDeclaredConstructor().newInstance();
-            beanFactory.registerSingleton(convertBeanName(clazz.getName().trim()), instance);
+            beanFactory.registerSingleton(convertBeanName(clazz.getSimpleName().trim()), instance);
         }
     }
 
-    private void annotatedConfiguration(Class<?> configClass) throws Exception {
-        for (Method method : configClass.getDeclaredMethods()) {
-            if (method.isAnnotationPresent(Bean.class)) {
-                Object bean = method.invoke(configClass.newInstance());
+    private void annotatedConfiguration(Class<?> clazz) throws Exception {
+        for (Method method : clazz.getDeclaredMethods()) {
+            if (method.isAnnotationPresent(keb.framework.annotations.Bean.class)) {
+                Object bean = method.invoke(clazz.getDeclaredConstructor().newInstance());
                 beanFactory.registerSingleton(method.getName(), bean);
             }
         }
