@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2025dea-9502-450e-9296-f399386a3f54" name="변경" comment="refactor: bean scan, register 로직 수정">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cns/framework/PublicClassLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cns/framework/PublicMethodScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cns/public_user/AnimalFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/annotation/Bean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/config/TestBeanConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cns/CnsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cns/CnsMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/config/PetConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/scan/PetFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -88,8 +90,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="cns" />
-                    <option name="lastUsedInstant" value="1718542034" />
+                    <option name="branchName" value="merge_yun" />
+                    <option name="lastUsedInstant" value="1720488558" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
@@ -110,6 +112,12 @@
     &quot;accountId&quot;: &quot;d201b740-dfcd-46ff-8fa2-fa248dc0a2db&quot;
   }
 }</component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -124,43 +132,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.spring-core [:CnsMain.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.spring-core [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.spring-core [:MyMain.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.spring-core [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.spring-core [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.spring-core [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.YunhaMain.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.spring-core [:CnsMain.main()].executor": "Run",
+    "Gradle.spring-core [:Main.main()].executor": "Run",
+    "Gradle.spring-core [:MyMain.main()].executor": "Run",
+    "Gradle.spring-core [:YunhaMain.main()].executor": "Run",
+    "Gradle.spring-core [build].executor": "Run",
+    "Gradle.spring-core [clean].executor": "Run",
+    "Gradle.spring-core [jar].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "merge__yun",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cns.framework" />
       <recent name="user" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.CnsMain">
+  <component name="RunManager" selected="Application.YunhaMain">
     <configuration name="CnsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cns.CnsMain" />
+      <module name="spring-core.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YunhaMain" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="yunha.YunhaMain" />
       <module name="spring-core.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -232,12 +251,18 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.YunhaMain" />
+      <item itemvalue="Application.CnsMain" />
+      <item itemvalue="Gradle.spring-core [build]" />
+      <item itemvalue="Gradle.spring-core [clean]" />
+      <item itemvalue="Gradle.spring-core [jar]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.spring-core [jar]" />
         <item itemvalue="Gradle.spring-core [clean]" />
         <item itemvalue="Gradle.spring-core [build]" />
-        <item itemvalue="애플리케이션.CnsMain" />
       </list>
     </recent_temporary>
   </component>
@@ -345,15 +370,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="refactor: bean scan, register 로직 수정" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cns/CnsMain.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
