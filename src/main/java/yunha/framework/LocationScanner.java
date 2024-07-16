@@ -4,6 +4,10 @@ package yunha.framework;
 import org.reflections.scanners.SubTypesScanner;
 import yunha.annotation.Bean;
 import org.reflections.Reflections;
+import yunha.annotation.Component;
+import yunha.annotation.Configuration;
+import yunha.annotation.Scope;
+import yunha.enums.ScopeType;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -37,7 +41,6 @@ public class LocationScanner {
 
         for(Class clazz : classes) {
             beanFactory.registerSingleton(clazz.getSimpleName(), clazz.getDeclaredConstructor().newInstance());
-            System.out.println(clazz.getSimpleName());
         }
 
         return classes;
@@ -61,7 +64,6 @@ public class LocationScanner {
                     for(Method method : methods) {
                         if (Modifier.isPublic(method.getModifiers())) {
                             beanFactory.registerSingleton(method.getName(), method.invoke(instance));
-                            System.out.println("Public method: " + method.getName());
                         }
                     }
                 }
@@ -77,19 +79,52 @@ public class LocationScanner {
         if(classes == null)
             return;
 
+        ScopeType scopeType = null;
         for(Class clazz : classes) {
-            Method[] methods = clazz.getDeclaredMethods();
-            if(methods != null && methods.length > 0) {
-                for(Method method : methods) {
-                    if(method.isAnnotationPresent(Bean.class.asSubclass(Bean.class))) {
-                        Bean beanAnnotation = method.getAnnotation(Bean.class);
-                        String name = beanAnnotation.value().equals("") ? method.getName() : beanAnnotation.value();
-                        Object instance = clazz.getDeclaredConstructor().newInstance();
-                        beanFactory.registerSingleton(name, method.invoke(instance));
-                        System.out.println("annotation bean: " + name);
+            if(clazz.isAnnotationPresent(Component.class)) {
+                Object instance = clazz.getDeclaredConstructor().newInstance();
+                scopeType = checkClassIsScopeAnnotationPresent(clazz);
+                registerBean(clazz.getSimpleName(), instance, scopeType);
+            } else if(clazz.isAnnotationPresent(Configuration.class)) {
+                Method[] methods = clazz.getDeclaredMethods();
+                if(methods != null && methods.length > 0) {
+                    for(Method method : methods) {
+                        if(method.isAnnotationPresent(Bean.class.asSubclass(Bean.class))) {
+                            Bean beanAnnotation = method.getAnnotation(Bean.class);
+                            String name = beanAnnotation.value().equals("") ? method.getName() : beanAnnotation.value();
+                            Object instance = method.invoke(clazz.getDeclaredConstructor().newInstance());
+                            scopeType = checkMethodIsScopeAnnotationPresent(method);
+                            registerBean(name, instance, scopeType);
+                        }
                     }
                 }
             }
         }
+    }
+
+    private void registerBean(String name, Object instance, ScopeType scopeType) {
+        if(scopeType == ScopeType.SINGLETON) {
+            beanFactory.registerSingleton(name, instance);
+        } else if (scopeType == ScopeType.PROTOTYPE) {
+            beanFactory.registerPrototype(name, instance);
+        }
+    }
+
+    private ScopeType checkClassIsScopeAnnotationPresent(Class clazz) {
+        ScopeType scopeType = ScopeType.SINGLETON;
+        if(clazz.isAnnotationPresent(Scope.class)) {
+            Scope scopeAnnotation = (Scope) clazz.getAnnotation(Scope.class);
+            scopeType = scopeAnnotation.type();
+        }
+        return scopeType;
+    }
+
+    private ScopeType checkMethodIsScopeAnnotationPresent(Method method) {
+        ScopeType scopeType = ScopeType.SINGLETON;
+        if(method.isAnnotationPresent(Scope.class)) {
+            Scope scopeAnnotation = (Scope) method.getAnnotation(Scope.class);
+            scopeType = scopeAnnotation.type();
+        }
+        return scopeType;
     }
 }

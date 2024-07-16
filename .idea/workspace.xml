@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fd250c2-e99f-4192-850d-9746006786ac" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cns/annotation_user/CnaAnimalFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cns/annotation_user/CnsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cns/annotations/CNSBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cns/framework/AnnotationScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/annotation/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/annotation/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/annotation/Scope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/enums/ScopeType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cns/CnsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cns/CnsMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/config/TestBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/config/TestBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/framework/BeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/BeanDefinitionRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/framework/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -34,6 +43,31 @@
     &quot;assignee&quot;: &quot;combrain817&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="yunha" />
+                    <option name="lastUsedInstant" value="1721179574" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1721179573" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/GGOGGOMU/spring-core.git&quot;,
@@ -45,15 +79,20 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2jGfORXBbaenTtOXR6baXavXjEA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CnsMain.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "Gradle.spring-core [:CnsMain.main()].executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "yunha",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/combrain/dev/spring/spring-core/src/main/java/cns",
     "node.js.detected.package.eslint": "true",
@@ -69,20 +108,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/cns" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="CnsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cns.CnsMain" />
-      <module name="spring-core.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cns.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.YunhaMain">
     <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
       <setting name="displayName" value="" />
       <setting name="bbPath" value="" />
@@ -113,18 +139,35 @@
       <setting name="urlFile" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <option name="AUTO_RESTART" value="false" />
-      <method v="2" />
+    <configuration name="CnsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cns.CnsMain" />
+      <module name="spring-core.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cns.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
+    <configuration name="YunhaMain" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="yunha.YunhaMain" />
+      <module name="spring-core.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.YunhaMain" />
+      <item itemvalue="Application.CnsMain" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.CnsMain" />
+        <item itemvalue="Application.CnsMain" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +196,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="변경" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -168,5 +215,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

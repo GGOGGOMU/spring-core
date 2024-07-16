@@ -8,14 +8,27 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class BeanFactory implements BeanDefinitionRegistry {
     private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256);
+    private final Map<String, Object> prototypeObjects = new ConcurrentHashMap<>(256);
 
     public void getRegisteredBean() {
-        System.out.println("----------------Registered Bean names ------------");
-        Collection<Object> values = singletonObjects.values();
+        System.out.println("----------------Registered Singleton Bean names ------------");
+        Collection<String> singletonObjects = this.singletonObjects.keySet();
 
-        for(Object value : values) {
-            System.out.println(value.getClass());
+        for(String value : singletonObjects) {
+            System.out.println(value);
         }
+
+        System.out.println("----------------Registered Prototype Bean names ------------");
+        Collection<String> prototypeObjects = this.prototypeObjects.keySet();
+
+        for(Object value : prototypeObjects) {
+            System.out.println(value);
+        }
+    }
+
+    @Override
+    public void registerPrototype(String beanName, Object prototypeObject) throws IllegalStateException {
+        this.prototypeObjects.put(beanName, prototypeObject);
     }
 
     @Override

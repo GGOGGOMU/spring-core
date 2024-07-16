@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 
 public class YunhaMain {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        System.out.println("Hello world!");
         BeanFactory factory = new BeanFactory();
         LocationScanner scanner = new LocationScanner(factory);
 
@@ -23,6 +22,6 @@ public class YunhaMain {
         String rootPackagePath = "yunha";
         scanner.annotationScanner(rootPackagePath);
 
-        System.out.println("done");
+        factory.getRegisteredBean();
     }
 }
