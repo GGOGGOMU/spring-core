@@ -4,64 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2025dea-9502-450e-9296-f399386a3f54" name="변경" comment="refactor: bean scan, register 로직 수정">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/annotation/Bean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yunha/config/TestBeanConfig.java" afterDir="false" />
+    <list default="true" id="3fd250c2-e99f-4192-850d-9746006786ac" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cns/annotation_user/CnaAnimalFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cns/annotation_user/CnsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cns/annotations/CNSBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cns/framework/AnnotationScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/YunhaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/config/PetConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/scan/PetFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yunha/framework/LocationScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cns/CnsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cns/CnsMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="spring-core" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/cns" />
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/cns" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -70,199 +34,97 @@
     &quot;assignee&quot;: &quot;combrain817&quot;
   }
 }</component>
-  <component name="GitHubPullRequestState">{
-  &quot;prStates&quot;: [
-    {
-      &quot;id&quot;: {
-        &quot;id&quot;: &quot;PR_kwDOMHsYfs5zR6Qj&quot;,
-        &quot;number&quot;: 2
-      },
-      &quot;lastSeen&quot;: 1719138113030
-    }
-  ]
-}</component>
-  <component name="GitToolBoxStore">
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="merge_yun" />
-                    <option name="lastUsedInstant" value="1720488558" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1718542033" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
-  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/GGOGGOMU/spring-core.git&quot;,
     &quot;accountId&quot;: &quot;d201b740-dfcd-46ff-8fa2-fa248dc0a2db&quot;
   }
 }</component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2hjgDjtajCsw81DLqF8pNTQOht6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2jGfORXBbaenTtOXR6baXavXjEA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.YunhaMain.executor": "Debug",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.spring-core [:CnsMain.main()].executor": "Run",
-    "Gradle.spring-core [:Main.main()].executor": "Run",
-    "Gradle.spring-core [:MyMain.main()].executor": "Run",
-    "Gradle.spring-core [:YunhaMain.main()].executor": "Run",
-    "Gradle.spring-core [build].executor": "Run",
-    "Gradle.spring-core [clean].executor": "Run",
-    "Gradle.spring-core [jar].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "Gradle.spring-core [:CnsMain.main()].executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "merge__yun",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/combrain/dev/spring/spring-core/src/main/java/cns",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cns.framework" />
-      <recent name="user" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/cns" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.YunhaMain">
+  <component name="RunManager">
     <configuration name="CnsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cns.CnsMain" />
       <module name="spring-core.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cns.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="YunhaMain" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="21" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="yunha.YunhaMain" />
-      <module name="spring-core.main" />
+    <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="bbPath" value="" />
+      <setting name="parameters" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <setting name="workingDir" value="" />
+      <setting name="focusEditor" value="false" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="spring-core [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <option name="configVersion" value="1" />
+      <option name="options" />
+      <option name="profiles" />
       <method v="2" />
     </configuration>
-    <configuration name="spring-core [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <setting name="urlFile" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="spring-core [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+    <configuration default="true" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Application.YunhaMain" />
-      <item itemvalue="Application.CnsMain" />
-      <item itemvalue="Gradle.spring-core [build]" />
-      <item itemvalue="Gradle.spring-core [clean]" />
-      <item itemvalue="Gradle.spring-core [jar]" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.spring-core [jar]" />
-        <item itemvalue="Gradle.spring-core [clean]" />
-        <item itemvalue="Gradle.spring-core [build]" />
+        <item itemvalue="애플리케이션.CnsMain" />
       </list>
     </recent_temporary>
   </component>
@@ -277,103 +139,34 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="c2025dea-9502-450e-9296-f399386a3f54" name="변경" comment="" />
-      <created>1718112786564</created>
+      <changelist id="3fd250c2-e99f-4192-850d-9746006786ac" name="변경" comment="" />
+      <created>1721018302121</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1718112786564</updated>
-      <workItem from="1718112787557" duration="4464000" />
-      <workItem from="1718541950754" duration="6255000" />
-      <workItem from="1718719676150" duration="199000" />
-      <workItem from="1718789761400" duration="1204000" />
-      <workItem from="1719289900716" duration="441000" />
+      <updated>1721018302121</updated>
+      <workItem from="1721018303193" duration="17000" />
+      <workItem from="1721018326287" duration="1755000" />
+      <workItem from="1721140841394" duration="745000" />
     </task>
-    <task id="LOCAL-00001" summary="chore: 프로젝트 세팅">
-      <option name="closed" value="true" />
-      <created>1718112896140</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1718112896140</updated>
-    </task>
-    <task id="LOCAL-00002" summary="chore: README.md 추가">
-      <option name="closed" value="true" />
-      <created>1718114579580</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1718114579580</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add: 예시 클래스 추가">
-      <option name="closed" value="true" />
-      <created>1718115857340</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1718115857340</updated>
-    </task>
-    <task id="LOCAL-00004" summary="feat: 패키지 로드 및 스캔">
-      <option name="closed" value="true" />
-      <created>1718790134031</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1718790134032</updated>
-    </task>
-    <task id="LOCAL-00005" summary="refactor: bean scan, register 로직 수정">
-      <option name="closed" value="true" />
-      <created>1719150422857</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1719150422857</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/master" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="chore: 프로젝트 세팅" />
-    <MESSAGE value="chore: README.md 추가" />
-    <MESSAGE value="add: 예시 클래스 추가" />
-    <MESSAGE value="feat: 패키지 로드 및 스캔" />
-    <MESSAGE value="refactor: bean scan, register 로직 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: bean scan, register 로직 수정" />
-  </component>
   <component name="XDebuggerManager">
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
-      </pinned-members>
-    </pin-to-top-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cns/CnsMain.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cns/framework/AnnotationScanner.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

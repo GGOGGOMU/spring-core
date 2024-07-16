@@ -10,10 +10,11 @@ public class CnsMain {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 
         // 패키지 스캔
-        LocationScanner scanner = new LocationScanner();
+        AnnotationScanner scanner = new AnnotationScanner();
+//        LocationScanner scanner = new LocationScanner();
 //        PublicMethodScanner scanner = new PublicMethodScanner();
 //        List<String> classNames = scanner.read("cns.users");
-        List<String> classNames = scanner.read("cns.public_user");
+        List<String> classNames = scanner.read("cns.annotation_user");
 
         // 빈 팩토리 생성 및 빈 등록
         BeanFactory beanFactory = new BeanFactory();
